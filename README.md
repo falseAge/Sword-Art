@@ -6,21 +6,27 @@
 
 ## Фичи
 
-Low-Poly стилизация
-
-Машина состояний анимаций через Blend Tree
+<ul>
+  <li>Low-Poly стилизация</li>
+  
+  <li>Машина состояний анимаций через Blend Tree</li>
+</ul>
 
 ## Технологии
 
-Unity 3D 2022.3.47f1
+<ul>
+  <li>Unity 3D 2022.3.47f1</li>
 
-C# v.8
+  <li>C# v.8</li>
+</ul>
 
 ## Инструменты
 
-Terrain Tool
-
-Animator with blend tree
+<ul>
+  <li>Terrain Tool</li>
+  
+  <li>Animator with blend tree</li>
+</ul>
 
 ## Структура проекта
 
