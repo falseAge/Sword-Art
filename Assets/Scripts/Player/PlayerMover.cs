@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,6 +15,7 @@ public class PlayerMover : MonoBehaviour
 
     private Rigidbody _rb;
     private Camera _camera;
+    private Animator _anim;
 
     private float _xRotation = 0;
     private float _yRotation = 0;
@@ -22,6 +24,7 @@ public class PlayerMover : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _camera = Camera.main;
+        _anim = GetComponent<Animator>();        
 
         _inputs.attackEvent.AddListener(OnAttack);
         _inputs.jumpEvent.AddListener(OnJump);
@@ -35,6 +38,23 @@ public class PlayerMover : MonoBehaviour
 
     private void OnMove()
     {
+        if (_inputs.move.x == 1)
+        {
+            _anim.SetTrigger("runForward");
+        }
+        else if (_inputs.move.x == -1)
+        {
+            _anim.SetTrigger("runBackward");
+        }
+        else if (_inputs.move.y == 1)
+        {
+            _anim.SetTrigger("runRight");
+        }
+        else if (_inputs.move.y == -1)
+        {
+            _anim.SetTrigger("runLeft");
+        }
+
         _rb.AddRelativeForce(new Vector3(_inputs.move.x, 0, _inputs.move.y) * _speed * Time.deltaTime);
     }
 
@@ -56,6 +76,7 @@ public class PlayerMover : MonoBehaviour
 
     private void OnJump()
     {
+        _anim.SetTrigger("jump");
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
 }
