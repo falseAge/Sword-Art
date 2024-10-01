@@ -14,8 +14,8 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private Camera headCamera;
     [SerializeField] private Animator _animator;
     [SerializeField, Range(0, 50)] private float speed = 10;
-    [SerializeField, Range(0, 50)] private float sprintSpeed = 10;
-    [SerializeField, Range(0, 2)] private float characterSense = 0.2f;
+    [SerializeField, Range(0, 50)] private float sprintSpeed = 15;
+    [SerializeField, Range(0, 2)] private float characterSense = 1f;
 
 
     public bool IsGrounded { get; private set; } = false;
@@ -122,7 +122,9 @@ public class PlayerMovementController : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         var input = inputValue.Get<Vector2>();
-        movementDirection = new Vector3(input.x, 0, input.y); 
+        _animator.SetFloat("walkDirectionX", input.x);
+        _animator.SetFloat("walkDirectionY", input.y);
+        movementDirection = new Vector3(input.x, 0, input.y);
     }
 
     private void OnLook(InputValue inputValue)
@@ -148,7 +150,10 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (inputValue.isPressed && IsGrounded)
         {
-            _animator.SetTrigger("isJump");
+            if (movementDirection !=  Vector3.zero)
+                _animator.SetTrigger("isRunningJump");
+            else
+                _animator.SetTrigger("isJump");
             velocity = Vector3.up * 3;
         }
     }

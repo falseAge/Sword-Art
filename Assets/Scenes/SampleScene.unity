@@ -1566,7 +1566,7 @@ MonoBehaviour:
   _animator: {fileID: 2035074253}
   speed: 10
   sprintSpeed: 15
-  characterSense: 1
+  characterSense: 1.2
 --- !u!95 &2035074253 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4540229000190281644, guid: 60770bdb4dc667c45bea53db0339dc05,
