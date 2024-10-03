@@ -1,5 +1,8 @@
+using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 
@@ -13,10 +16,20 @@ public class PlayerMovementController : MonoBehaviour
 
     [SerializeField] private Camera headCamera;
     [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject _inventory;
+    [SerializeField, Range(0, 100)] private float _health = 100;
+    [SerializeField, Range(0, 100)] private float _mana = 100;
     [SerializeField, Range(0, 50)] private float speed = 10;
     [SerializeField, Range(0, 50)] private float sprintSpeed = 15;
     [SerializeField, Range(0, 2)] private float characterSense = 1f;
 
+    private float _maxHealth = 100;
+    private float _currentHealth;
+    private float _maxMana = 100;
+    private float _currentMana;
+
+    public UnityEvent<float> OnGetDamage;
+    public UnityEvent<float> OnUsingMana;
 
     public bool IsGrounded { get; private set; } = false;
 
@@ -57,6 +70,9 @@ public class PlayerMovementController : MonoBehaviour
     
         StartControlling();
         Current = this;
+
+        _currentHealth = _maxHealth;
+        _currentMana = _maxMana;
     }
     private void FixedUpdate()
     {
@@ -163,6 +179,17 @@ public class PlayerMovementController : MonoBehaviour
         SprintState = inputValue.isPressed;
     }
 
+    private void OnInventory(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+        {
+            _inventory.SetActive(true);
+        }
+        else{
+            _inventory.SetActive(false);
+        }
+    }
+
     private Vector3 CalculateMovementDirection()
     {
         localMovementAcelerationVector = Vector3.Lerp(localMovementAcelerationVector, transform.rotation * movementDirection * (SprintState ? sprintSpeed : speed), (IsGrounded ? 10 : 1) * Time.fixedDeltaTime);
@@ -182,5 +209,23 @@ public class PlayerMovementController : MonoBehaviour
         {
             IsGrounded = false;
         }
+    }
+
+    private void OnTestButton(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            TakeDamage(10);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+        OnGetDamage?.Invoke(_currentHealth);
+    }
+
+    public void UsingMana(float mana)
+    {
+        _currentMana -= mana;
+        OnUsingMana?.Invoke(_currentMana);
     }
 }
