@@ -172,7 +172,7 @@ AnimatorStateMachine:
     m_Position: {x: 1280, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3660671082717906264}
-    m_Position: {x: 1280, y: -250, z: 0}
+    m_Position: {x: 350, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8673309828346637760}
     m_Position: {x: 1280, y: -200, z: 0}
@@ -187,13 +187,13 @@ AnimatorStateMachine:
     m_Position: {x: 1280, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8310488012387801553}
-    m_Position: {x: 1280, y: 0, z: 0}
+    m_Position: {x: 350, y: -320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5483756338263994134}
-    m_Position: {x: 1280, y: 50, z: 0}
+    m_Position: {x: 350, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6275339480847461703}
-    m_Position: {x: 1280, y: 100, z: 0}
+    m_Position: {x: 350, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5739984827645508735}
     m_Position: {x: 350, y: 280, z: 0}
@@ -202,7 +202,7 @@ AnimatorStateMachine:
     m_Position: {x: 350, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2164710194063405354}
-    m_Position: {x: 1280, y: 250, z: 0}
+    m_Position: {x: 350, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2054809301605258586}
     m_Position: {x: 1280, y: 300, z: 0}
@@ -359,7 +359,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New State
+  m_Name: StrafeRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

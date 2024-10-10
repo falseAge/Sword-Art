@@ -17,19 +17,23 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private Camera headCamera;
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _inventory;
-    [SerializeField, Range(0, 100)] private float _health = 100;
-    [SerializeField, Range(0, 100)] private float _mana = 100;
+    [SerializeField] private GameObject _weaponSlot;
+
+    [SerializeField, Range(0, 100)] private float _currentHealth = 100;
+    [SerializeField, Range(0, 100)] private float _currentMana = 100;
     [SerializeField, Range(0, 50)] private float speed = 10;
     [SerializeField, Range(0, 50)] private float sprintSpeed = 15;
     [SerializeField, Range(0, 2)] private float characterSense = 1f;
 
     private float _maxHealth = 100;
-    private float _currentHealth;
     private float _maxMana = 100;
-    private float _currentMana;
+
+    //private int _currentWeaponNumber;
 
     public UnityEvent<float> OnGetDamage;
     public UnityEvent<float> OnUsingMana;
+    public UnityEvent<int> OnHotBarChange;
+    
 
     public bool IsGrounded { get; private set; } = false;
 
@@ -209,6 +213,13 @@ public class PlayerMovementController : MonoBehaviour
         {
             IsGrounded = false;
         }
+    }
+
+    private void OnHotBar(InputValue inputValue)
+    {
+        Debug.Log(inputValue);
+        //_currentWeaponNumber = inputValue.value;
+        //OnHotBarChange?.Invoke(_currentWeaponNumber);
     }
 
     private void OnTestButton(InputValue inputValue)
