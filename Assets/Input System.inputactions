@@ -69,15 +69,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "d87818e5-a30f-459c-a282-cf2608a98c5a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interaction",
                     "type": "Button",
                     "id": "b7750538-7ea6-44d0-8d10-3a51c7aea064",
@@ -114,9 +105,81 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "HotBar",
+                    "name": "Slot1",
                     "type": "Button",
-                    "id": "a4a97a3a-0b48-4847-ba3c-1e93dd380253",
+                    "id": "b2d48090-ef3f-458c-bc9e-2b6b9e5434ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot2",
+                    "type": "Button",
+                    "id": "daa0fb06-db94-4457-90f8-fcf94ba837ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot3",
+                    "type": "Button",
+                    "id": "dd72e53a-5500-4840-9db8-96c78584191b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot4",
+                    "type": "Button",
+                    "id": "9132ad1d-31fc-400e-80c1-7e0d5a7170e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot5",
+                    "type": "Button",
+                    "id": "afc9fdf0-fae0-4220-9546-fac43a6d2468",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot6",
+                    "type": "Button",
+                    "id": "7a60948b-56eb-4802-8ceb-811bd975f96e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot7",
+                    "type": "Button",
+                    "id": "2495e042-05e5-423b-ab0f-483e621d63f4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot8",
+                    "type": "Button",
+                    "id": "9fd107e4-03a2-4344-a52a-b1bea9d8f884",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slot9",
+                    "type": "Button",
+                    "id": "110838b4-7ba9-421b-b58e-66b5254f06b4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -313,17 +376,6 @@
                 },
                 {
                     "name": "",
-                    "id": "da160fcb-518e-4167-866c-fa7ac917b216",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ff355431-e926-486e-b0e6-aeca5e010f8e",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -368,100 +420,100 @@
                 },
                 {
                     "name": "",
-                    "id": "c1057ea0-d63b-47ae-bf33-7628657b37ef",
+                    "id": "8bd22be5-77b3-485f-b4be-e20d96fd60c2",
                     "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "2eb526b2-d8c8-4f0f-8aee-eea24fbe730b",
+                    "id": "bf5078e4-1c26-40a8-957e-034544345ca5",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "f16ef37f-51c1-499b-86e2-9bf2bc2cb20b",
+                    "id": "cf78e30d-680d-45d7-bc90-ce0cd2fea610",
                     "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "29bbad7d-c562-40cc-845d-68e49743b9b2",
+                    "id": "6ecf1af8-d7b9-425c-9468-7b9814e2ba3d",
                     "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "14c256df-2e99-40c4-8ec0-82d87f17a289",
+                    "id": "d1d6cc81-508a-4764-9d59-21c651b9ac42",
                     "path": "<Keyboard>/5",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "f96ffce9-9e52-450a-bf08-0cb52ac9b0ed",
+                    "id": "9b42727b-7d49-4ff3-b299-782650eec255",
                     "path": "<Keyboard>/6",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot6",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0c5993c2-83bb-431a-98f8-0f59673dba8c",
+                    "id": "df76bdab-8576-4882-add5-14b17dbaba15",
                     "path": "<Keyboard>/7",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot7",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "90fd914c-be73-4f4e-b84f-d39e8d6d332b",
+                    "id": "16a8bc2c-64e8-4650-ae0b-50eee165bb2a",
                     "path": "<Keyboard>/8",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot8",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "f86016d0-18ae-48ce-9386-4a49ec196573",
+                    "id": "b7414170-2095-4328-aca2-bdd13f31c969",
                     "path": "<Keyboard>/9",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "HotBar",
+                    "action": "Slot9",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

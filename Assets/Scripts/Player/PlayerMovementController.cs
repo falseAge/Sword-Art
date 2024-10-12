@@ -16,7 +16,6 @@ public class PlayerMovementController : MonoBehaviour
 
     [SerializeField] private Camera headCamera;
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject _inventory;
     [SerializeField] private GameObject _weaponSlot;
 
     [SerializeField, Range(0, 100)] private float _currentHealth = 100;
@@ -183,17 +182,6 @@ public class PlayerMovementController : MonoBehaviour
         SprintState = inputValue.isPressed;
     }
 
-    private void OnInventory(InputValue inputValue)
-    {
-        if (inputValue.isPressed)
-        {
-            _inventory.SetActive(true);
-        }
-        else{
-            _inventory.SetActive(false);
-        }
-    }
-
     private Vector3 CalculateMovementDirection()
     {
         localMovementAcelerationVector = Vector3.Lerp(localMovementAcelerationVector, transform.rotation * movementDirection * (SprintState ? sprintSpeed : speed), (IsGrounded ? 10 : 1) * Time.fixedDeltaTime);
@@ -215,11 +203,55 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void OnHotBar(InputValue inputValue)
+    private void OnHotBar(int value)
     {
-        Debug.Log(inputValue);
-        //_currentWeaponNumber = inputValue.value;
-        //OnHotBarChange?.Invoke(_currentWeaponNumber);
+        OnHotBarChange?.Invoke(value);
+    }
+
+    private void OnSlot1(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(1);
+    }
+    private void OnSlot2(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(2);
+    }
+    private void OnSlot3(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(3);
+    }
+    private void OnSlot4(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(4);
+    }
+    private void OnSlot5(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(5);
+    }
+    private void OnSlot6(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(6);
+    }
+    private void OnSlot7(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(7);
+    }
+    private void OnSlot8(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(8);
+    }
+    private void OnSlot9(InputValue inputValue)
+    {
+        if (inputValue.isPressed)
+            OnHotBar(9);
     }
 
     private void OnTestButton(InputValue inputValue)
