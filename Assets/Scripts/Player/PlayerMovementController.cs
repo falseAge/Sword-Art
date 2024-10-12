@@ -18,7 +18,6 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private AnimatorOverrideController _oneHanded;
     [SerializeField] private AnimatorOverrideController _twoHanded;
-    [SerializeField] private GameObject _weaponSlot;
 
     [SerializeField, Range(0, 100)] private float _currentHealth = 100;
     [SerializeField, Range(0, 100)] private float _currentMana = 100;
@@ -28,8 +27,6 @@ public class PlayerMovementController : MonoBehaviour
 
     private float _maxHealth = 100;
     private float _maxMana = 100;
-
-    //private int _currentWeaponNumber;
 
     public UnityEvent<float> OnGetDamage;
     public UnityEvent<float> OnUsingMana;
@@ -213,7 +210,6 @@ public class PlayerMovementController : MonoBehaviour
     private void OnHotBar(int slot)
     {
         ChangeAnimationsType(slot);
-        //ChangeWeapon(slot);
         OnHotBarChange?.Invoke(slot);
     }
 
@@ -296,17 +292,4 @@ public class PlayerMovementController : MonoBehaviour
                 break;
         }
     }
-
-    // private void ChangeWeapon(int hotBarSlot)
-    // {
-    //     switch (hotBarSlot)
-    //     {
-    //         case 1:
-    //             _animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Idle");
-    //             break;
-    //         case 2:
-    //             Instantiate(daggerPrefab, _weaponSlot.transform);
-    //             break;
-    //     }
-    // }
 }
