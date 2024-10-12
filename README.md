@@ -48,6 +48,8 @@
   <li>Terrain Tool</li>
   
   <li>Animator with blend tree</li>
+
+  <li>Mirror</li>
 </ul>
 
 ## Структура проекта
