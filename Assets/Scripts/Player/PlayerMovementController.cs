@@ -16,6 +16,8 @@ public class PlayerMovementController : MonoBehaviour
 
     [SerializeField] private Camera headCamera;
     [SerializeField] private Animator _animator;
+    [SerializeField] private AnimatorOverrideController _oneHanded;
+    [SerializeField] private AnimatorOverrideController _twoHanded;
     [SerializeField] private GameObject _weaponSlot;
 
     [SerializeField, Range(0, 100)] private float _currentHealth = 100;
@@ -66,8 +68,12 @@ public class PlayerMovementController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
+    private RuntimeAnimatorController _defaultController;
+
     private void Awake()
     {
+        _defaultController = _animator.runtimeAnimatorController;
+
         characterController = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
     
@@ -155,14 +161,15 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnAttack(InputValue inputValue)
     {
-        if (inputValue.isPressed)
-        {
-            bool randomPunch = Random.value > 0.5;
-            if (randomPunch)
-                _animator.SetTrigger("isPunchAttackRight");
-            else
-                _animator.SetTrigger("isPunchAttackLeft");
-        }
+         _animator.SetTrigger("isPunchAttackRight");
+        // if (inputValue.isPressed)
+        // {
+        //     bool randomPunch = Random.value > 0.5;
+        //     if (randomPunch)
+        //         _animator.SetTrigger("isPunchAttackRight");
+        //     else
+        //         _animator.SetTrigger("isPunchAttackLeft");
+        // }
     }
 
     private void OnJump(InputValue inputValue)
@@ -203,9 +210,11 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void OnHotBar(int value)
+    private void OnHotBar(int slot)
     {
-        OnHotBarChange?.Invoke(value);
+        ChangeAnimationsType(slot);
+        //ChangeWeapon(slot);
+        OnHotBarChange?.Invoke(slot);
     }
 
     private void OnSlot1(InputValue inputValue)
@@ -271,4 +280,33 @@ public class PlayerMovementController : MonoBehaviour
         _currentMana -= mana;
         OnUsingMana?.Invoke(_currentMana);
     }
+
+    private void ChangeAnimationsType(int hotBarSlot)
+    {
+        switch (hotBarSlot)
+        {
+            case 1:
+                _animator.runtimeAnimatorController = _defaultController;
+                break;
+            case 2:
+                _animator.runtimeAnimatorController = _oneHanded;
+                break;
+            case 3:
+                _animator.runtimeAnimatorController = _twoHanded;
+                break;
+        }
+    }
+
+    // private void ChangeWeapon(int hotBarSlot)
+    // {
+    //     switch (hotBarSlot)
+    //     {
+    //         case 1:
+    //             _animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Idle");
+    //             break;
+    //         case 2:
+    //             Instantiate(daggerPrefab, _weaponSlot.transform);
+    //             break;
+    //     }
+    // }
 }
