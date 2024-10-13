@@ -1,5 +1,6 @@
 using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
+using Mirror;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +10,7 @@ using UnityEngine.TextCore.Text;
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerInput))]
 
-public class PlayerMovementController : MonoBehaviour
+public class PlayerMovementController : NetworkBehaviour
 {
 
     public static PlayerMovementController Current { get; private set; } = null;
